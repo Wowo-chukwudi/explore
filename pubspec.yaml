@@ -73,12 +73,21 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+  fonts:
+    - family: Axiforma
+      fonts:
+        - asset: assets/fonts/FontsFree-Net-Axiforma4woff2.ttf
+          weight: 700
+        - asset: assets/fonts/FontsFree-Net-sdd5.ttf
+          weight: 300
+        - asset: assets/fonts/FontsFree-Net-ddf6.ttf
+          weight: 500
+        - asset: assets/fonts/FontsFree-Net-sddd4.ttf
+          weight: 400
+    - family: ScothBrace
+      fonts:
+        - asset: assets/fonts/Scoth-Brace-Demo.ttf
+          weight: 400    
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
