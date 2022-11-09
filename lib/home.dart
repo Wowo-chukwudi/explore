@@ -10,11 +10,25 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Explore.',
-          style:
-              TextStyle(fontFamily: 'ScothBrace', fontWeight: FontWeight.bold),
-        ),
+        title: Stack(children: [
+          const Text(
+            'Explore ',
+            style: TextStyle(
+                fontFamily: 'ScothBrace', fontWeight: FontWeight.bold),
+          ),
+          Positioned(
+            child: Text(
+              '.',
+              style: TextStyle(
+                  fontFamily: 'ScothBrace',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30,
+                  color: Color.fromARGB(255, 108, 0, 1)),
+            ),
+            bottom: 0,
+            right: 0,
+          ),
+        ]),
         elevation: 0.0,
         actions: [
           IconButton(
