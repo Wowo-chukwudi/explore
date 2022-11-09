@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './explore_theme.dart';
+import 'components/components.dart';
 import 'main.dart';
 
 class Home extends StatelessWidget {
@@ -43,8 +44,16 @@ class Home extends StatelessWidget {
               })
         ],
       ),
-      body: Center(
-        child: Text('Hello'),
+      body: Container(
+        padding: const EdgeInsets.only(right: 16, left: 16),
+        child: Column(
+          children: [
+            //Search box
+            SearchBox(),
+            //Language and filter
+            //Country list view
+          ],
+        ),
       ),
     );
   }

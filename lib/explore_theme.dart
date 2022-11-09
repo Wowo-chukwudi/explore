@@ -57,32 +57,36 @@ class ExploreTheme {
 
   static ThemeData light() {
     return ThemeData(
-      brightness: Brightness.light,
-      checkboxTheme: CheckboxThemeData(
-        fillColor: MaterialStateColor.resolveWith(
-          (states) {
-            return Colors.black;
-          },
+        brightness: Brightness.light,
+        checkboxTheme: CheckboxThemeData(
+          fillColor: MaterialStateColor.resolveWith(
+            (states) {
+              return Colors.black;
+            },
+          ),
         ),
-      ),
-      scaffoldBackgroundColor: Colors.white,
-      appBarTheme: const AppBarTheme(
-        foregroundColor: Colors.black,
-        backgroundColor: Colors.white,
-      ),
-      textTheme: lightTextTheme,
-    );
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: const AppBarTheme(
+          foregroundColor: Colors.black,
+          backgroundColor: Colors.white,
+        ),
+        textTheme: lightTextTheme,
+        inputDecorationTheme: const InputDecorationTheme(
+          fillColor: Color.fromRGBO(245, 245, 245, 1),
+        ));
   }
 
   static ThemeData dark() {
     return ThemeData(
-      brightness: Brightness.dark,
-      scaffoldBackgroundColor: Colors.black,
-      appBarTheme: AppBarTheme(
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.black,
-      ),
-      textTheme: darkTextTheme,
-    );
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: Colors.black,
+        appBarTheme: AppBarTheme(
+          foregroundColor: Colors.white,
+          backgroundColor: Colors.black,
+        ),
+        textTheme: darkTextTheme,
+        inputDecorationTheme: const InputDecorationTheme(
+          fillColor: Color(0x3098A2B3),
+        ));
   }
 }
