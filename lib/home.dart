@@ -24,7 +24,7 @@ class Home extends StatelessWidget {
                   fontFamily: 'ScothBrace',
                   fontWeight: FontWeight.bold,
                   fontSize: 30,
-                  color: Color.fromARGB(255, 108, 0, 1)),
+                  color: Color(0xFFFF6C00)),
             ),
             bottom: 0,
             right: 0,
@@ -50,7 +50,11 @@ class Home extends StatelessWidget {
           children: [
             //Search box
             SearchBox(),
+            const SizedBox(
+              height: 10,
+            ),
             //Language and filter
+            Settings(),
             //Country list view
           ],
         ),

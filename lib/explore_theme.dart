@@ -26,6 +26,12 @@ class ExploreTheme {
       fontWeight: FontWeight.w500,
       color: Colors.black,
     ),
+    button: TextStyle(
+      fontFamily: 'Axiforma',
+      fontSize: 12.0,
+      fontWeight: FontWeight.w500,
+      color: Colors.white,
+    ),
   );
 
   static TextTheme darkTextTheme = TextTheme(
@@ -33,6 +39,12 @@ class ExploreTheme {
       fontFamily: 'Axiforma',
       fontSize: 14.0,
       fontWeight: FontWeight.w300,
+      color: Colors.white,
+    ),
+    button: TextStyle(
+      fontFamily: 'Axiforma',
+      fontSize: 12.0,
+      fontWeight: FontWeight.w500,
       color: Colors.white,
     ),
     bodyText2: TextStyle(
@@ -66,6 +78,11 @@ class ExploreTheme {
           ),
         ),
         scaffoldBackgroundColor: Colors.white,
+        textButtonTheme: TextButtonThemeData(
+            style: TextButton.styleFrom(
+          backgroundColor: Colors.white,
+          side: BorderSide(color: Color(0xFFA9B8D4)),
+        )),
         appBarTheme: const AppBarTheme(
           foregroundColor: Colors.black,
           backgroundColor: Colors.white,
