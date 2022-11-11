@@ -30,7 +30,7 @@ class ExploreTheme {
       fontFamily: 'Axiforma',
       fontSize: 12.0,
       fontWeight: FontWeight.w500,
-      color: Colors.white,
+      color: Colors.black,
     ),
   );
 

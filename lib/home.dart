@@ -1,14 +1,25 @@
+import 'package:explore/models/models.dart';
+import 'package:explore/network/country_api.dart';
 import 'package:flutter/material.dart';
 
 import './explore_theme.dart';
 import 'components/components.dart';
 import 'main.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class Home extends StatefulWidget {
+  const Home({
+    Key? key,
+  }) : super(key: key);
 
   @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
   Widget build(BuildContext context) {
+    List<CountryModel>? explore;
+    final countries = CountryApi();
     return Scaffold(
       appBar: AppBar(
         title: Stack(children: [
@@ -55,7 +66,33 @@ class Home extends StatelessWidget {
             ),
             //Language and filter
             Settings(),
+            const SizedBox(
+              height: 10,
+            ),
             //Country list view
+            Expanded(
+              child: FutureBuilder<List<CountryModel>>(
+                  future: countries.fetchAllCountries(),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.done) {
+                      final List<CountryModel> country =
+                          snapshot.data as List<CountryModel>;
+                      return ListView.builder(
+                        scrollDirection: Axis.vertical,
+                        shrinkWrap: true,
+                        itemBuilder: (context, index) {
+                          return CountryTileListView(
+                              capital: country[index].capital?.first ?? 'none');
+                        },
+                        itemCount: country.length,
+                      );
+                    } else {
+                      return Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }
+                  }),
+            ),
           ],
         ),
       ),

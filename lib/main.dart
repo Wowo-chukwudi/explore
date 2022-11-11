@@ -1,7 +1,12 @@
+import 'dart:convert';
+
 import 'package:explore/home.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 
 import './explore_theme.dart';
+import 'models/models.dart';
+import 'components/components.dart';
 
 void main() {
   runApp(Explore());
@@ -10,7 +15,9 @@ void main() {
 class Explore extends StatelessWidget {
   static final ValueNotifier<ThemeMode> themeNotifier =
       ValueNotifier(ThemeMode.light);
-  Explore({Key? key}) : super(key: key);
+  Explore({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
