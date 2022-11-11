@@ -70,9 +70,7 @@ class CountryModel {
   });
 
   CountryModel.fromJson(Map<String, dynamic> json) {
-    name = (json['name'] as Map<String, dynamic>?) != null
-        ? Name.fromJson(json['name'] as Map<String, dynamic>)
-        : null;
+    name = (json['name']) != null ? Name.fromJson(json['name']) : null;
     tld = (json['tld'] as List?)?.map((dynamic e) => e as String).toList();
     cca2 = json['cca2'] as String?;
     ccn3 = json['ccn3'] as String?;

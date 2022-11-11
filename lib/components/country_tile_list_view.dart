@@ -18,18 +18,20 @@ class CountryTileListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<CountryModel>? countries;
-    return ListTile(
-      leading: flag != null
-          ? Image(height: 40, width: 40, image: NetworkImage(flag))
-          : SizedBox(
-              height: 40,
-              width: 40,
-            ),
-      title: Text(
-        countryName,
-        style: Theme.of(context).textTheme.bodyText2,
+    return Container(
+      child: ListTile(
+        leading: flag != null
+            ? Image(height: 40, width: 40, image: NetworkImage(flag))
+            : SizedBox(
+                height: 40,
+                width: 40,
+              ),
+        title: Text(
+          countryName,
+          style: Theme.of(context).textTheme.bodyText2,
+        ),
+        subtitle: Text(capital),
       ),
-      subtitle: Text(capital),
     );
   }
 }

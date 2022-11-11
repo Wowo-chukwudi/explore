@@ -1,5 +1,6 @@
 import 'package:explore/models/models.dart';
 import 'package:explore/network/country_api.dart';
+import 'package:explore/screens/details.dart';
 import 'package:flutter/material.dart';
 
 import './explore_theme.dart';
@@ -18,7 +19,6 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    List<CountryModel>? explore;
     final countries = CountryApi();
     return Scaffold(
       appBar: AppBar(
@@ -81,11 +81,21 @@ class _HomeState extends State<Home> {
                         scrollDirection: Axis.vertical,
                         shrinkWrap: true,
                         itemBuilder: (context, index) {
-                          return CountryTileListView(
-                              flag: (country[index].flags!.png).toString(),
-                              countryName:
-                                  (country[index].name!.official).toString(),
-                              capital: country[index].capital?.first ?? 'none');
+                          return GestureDetector(
+                            child: CountryTileListView(
+                                flag: (country[index].flags!.png).toString(),
+                                countryName:
+                                    (country[index].name!.official).toString(),
+                                capital:
+                                    country[index].capital?.first ?? 'none'),
+                            onTap: (() {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          Details(country: country[index])));
+                            }),
+                          );
                         },
                         itemCount: country.length,
                       );

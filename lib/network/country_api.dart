@@ -7,27 +7,18 @@ import '../models/models.dart';
 
 class CountryApi {
   List<CountryModel> parseCountries(String responseBody) {
-    final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
-    //parsed.sort(); // parsed.sort((a, b) {
+    final parsed = json.decode(responseBody);
+
+    // parsed.sort((a, b) {
     //   return a.name!.official!
     //       .toLowerCase()
     //       .compareTo(b.name!.official!.toLowerCase());
-    // });
+    // }); // parsed.sort((a, b) {
+
     return parsed
         .map<CountryModel>((json) => CountryModel.fromJson(json))
         .toList();
   }
-  // List<CountryModel> parseCountries(json) {
-  //   List<CountryModel> parsed = (json as List)
-  //       .map((e) => CountryModel.fromJson(e as Map<String, dynamic>))
-  //       .toList();
-  //   parsed.sort((a, b) {
-  //     return a.name!.common!
-  //         .toLowerCase()
-  //         .compareTo(b.name!.common!.toLowerCase());
-  //   });
-  //   return parsed;
-  // }
 
   Future<List<CountryModel>> fetchAllCountries() async {
     //var client = http.Client();
@@ -36,28 +27,14 @@ class CountryApi {
 
     final response = await get(url);
     if (response.statusCode == 200) {
+      // final result = json.decode(response.body);
+
+      // Iterable list = result[0];
+      // return list.map((e) => CountryModel.fromJson(e)).toList();
+
       return parseCountries(response.body);
     } else {
       throw Exception('Unexpected error occured!');
     }
   }
-
-//   Future<List<CountryModel>> getData(String url) async {
-//     print('Calling url: $url');
-
-//     final response = await get(Uri.parse(url));
-
-//     if (response.statusCode == 200) {
-//       return response.body;
-//     } else {
-//       print('error');
-//     }
-//   }
-
-//   Future<List<CountryModel>> getCountryList(
-//       String flags, String name, String capital) async {
-//     final countryData =
-//         await getData('$apiUrl?flags = $flags &name =$name&capital=$capital');
-//     return countryData;
-//   }
 }
