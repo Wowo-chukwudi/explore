@@ -10,8 +10,8 @@ class ExploreTheme {
     ),
     bodyText2: TextStyle(
       fontFamily: 'Axiforma',
-      fontSize: 15.0,
-      fontWeight: FontWeight.w400,
+      fontSize: 14.0,
+      fontWeight: FontWeight.w500,
       color: Colors.black,
     ),
     headline1: TextStyle(
@@ -49,8 +49,8 @@ class ExploreTheme {
     ),
     bodyText2: TextStyle(
       fontFamily: 'Axiforma',
-      fontSize: 15.0,
-      fontWeight: FontWeight.w400,
+      fontSize: 14.0,
+      fontWeight: FontWeight.w500,
       color: Colors.white,
     ),
     headline1: TextStyle(

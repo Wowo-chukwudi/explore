@@ -82,6 +82,9 @@ class _HomeState extends State<Home> {
                         shrinkWrap: true,
                         itemBuilder: (context, index) {
                           return CountryTileListView(
+                              flag: (country[index].flags!.png).toString(),
+                              countryName:
+                                  (country[index].name!.official).toString(),
                               capital: country[index].capital?.first ?? 'none');
                         },
                         itemCount: country.length,

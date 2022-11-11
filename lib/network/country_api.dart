@@ -8,15 +8,26 @@ import '../models/models.dart';
 class CountryApi {
   List<CountryModel> parseCountries(String responseBody) {
     final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
-    // parsed.sort((a, b) {
-    //   return a.name!.common!
+    //parsed.sort(); // parsed.sort((a, b) {
+    //   return a.name!.official!
     //       .toLowerCase()
-    //       .compareTo(b.name!.common!.toLowerCase());
+    //       .compareTo(b.name!.official!.toLowerCase());
     // });
     return parsed
         .map<CountryModel>((json) => CountryModel.fromJson(json))
         .toList();
   }
+  // List<CountryModel> parseCountries(json) {
+  //   List<CountryModel> parsed = (json as List)
+  //       .map((e) => CountryModel.fromJson(e as Map<String, dynamic>))
+  //       .toList();
+  //   parsed.sort((a, b) {
+  //     return a.name!.common!
+  //         .toLowerCase()
+  //         .compareTo(b.name!.common!.toLowerCase());
+  //   });
+  //   return parsed;
+  // }
 
   Future<List<CountryModel>> fetchAllCountries() async {
     //var client = http.Client();
