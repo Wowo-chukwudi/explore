@@ -16,13 +16,13 @@ class ExploreTheme {
     ),
     headline1: TextStyle(
       fontFamily: 'Axiforma',
-      fontSize: 32.0,
+      fontSize: 20.0,
       fontWeight: FontWeight.w700,
       color: Colors.black,
     ),
     headline2: TextStyle(
       fontFamily: 'Axiforma',
-      fontSize: 18.0,
+      fontSize: 16.0,
       fontWeight: FontWeight.w500,
       color: Colors.black,
     ),
@@ -55,13 +55,13 @@ class ExploreTheme {
     ),
     headline1: TextStyle(
       fontFamily: 'Axiforma',
-      fontSize: 32.0,
+      fontSize: 20.0,
       fontWeight: FontWeight.w700,
       color: Colors.white,
     ),
     headline2: TextStyle(
       fontFamily: 'Axiforma',
-      fontSize: 18.0,
+      fontSize: 16.0,
       fontWeight: FontWeight.w500,
       color: Colors.white,
     ),

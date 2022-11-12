@@ -81,11 +81,16 @@ class _HomeState extends State<Home> {
                         scrollDirection: Axis.vertical,
                         shrinkWrap: true,
                         itemBuilder: (context, index) {
+                          country.sort((a, b) {
+                            return a.name!.common!
+                                .toLowerCase()
+                                .compareTo(b.name!.common!.toLowerCase());
+                          });
                           return GestureDetector(
                             child: CountryTileListView(
                                 flag: (country[index].flags!.png).toString(),
                                 countryName:
-                                    (country[index].name!.official).toString(),
+                                    (country[index].name!.common).toString(),
                                 capital:
                                     country[index].capital?.first ?? 'none'),
                             onTap: (() {
