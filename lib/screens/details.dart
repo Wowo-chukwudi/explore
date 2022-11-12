@@ -16,6 +16,7 @@ class Details extends StatefulWidget {
 class _DetailsState extends State<Details> {
   @override
   Widget build(BuildContext context) {
+    final Currencies currency;
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
@@ -31,7 +32,8 @@ class _DetailsState extends State<Details> {
             //carosel
             ImageSlider(
               flag: (widget.country.flags!.png).toString(),
-              coatOfArms: (widget.country.coatOfArms!.png).toString(),
+              coatOfArms: (widget.country.coatOfArms!.png ?? 'Not available')
+                  .toString(),
             ),
             const SizedBox(
               height: 20,
@@ -42,12 +44,16 @@ class _DetailsState extends State<Details> {
               population: (widget.country.population).toString(),
               region: (widget.country.region).toString(),
               capitalInfo: (widget.country.capitalInfo!.latlng).toString(),
-              officialLang: (widget.country.languages!.eng).toString(),
+              officialLang: (widget.country.languages!.eng ??
+                      widget.country.languages!.fra ??
+                      'not available')
+                  .toString(),
               unMember: (widget.country.unMember).toString(),
               continent: (widget.country.continents).toString(),
               independence: (widget.country.independent).toString(),
               area: (widget.country.area).toString(),
-              currency: (widget.country.currencies).toString(),
+              currency: (widget.country.currencies!.usd ?? 'not available')
+                  .toString(),
               landLocked: (widget.country.landlocked).toString(),
               timezone: (widget.country.timezones).toString(),
               startOfWeek: (widget.country.startOfWeek).toString(),

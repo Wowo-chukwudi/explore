@@ -965,18 +965,22 @@ class Idd {
 
 class Languages {
   String? eng;
+  String? fra;
 
   Languages({
     this.eng,
+    this.fra,
   });
 
   Languages.fromJson(Map<String, dynamic> json) {
     eng = json['eng'] as String?;
+    fra = json['fra'] as String?;
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> json = <String, dynamic>{};
     json['eng'] = eng;
+    json['fra'] = fra;
     return json;
   }
 }

@@ -75,8 +75,9 @@ class _HomeState extends State<Home> {
                   future: countries.fetchAllCountries(),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.done) {
-                      final List<CountryModel> country =
+                      List<CountryModel> country =
                           snapshot.data as List<CountryModel>;
+
                       return ListView.builder(
                         scrollDirection: Axis.vertical,
                         shrinkWrap: true,
@@ -86,7 +87,9 @@ class _HomeState extends State<Home> {
                                 .toLowerCase()
                                 .compareTo(b.name!.common!.toLowerCase());
                           });
+
                           return GestureDetector(
+                            key: ValueKey(country[index].name!.common),
                             child: CountryTileListView(
                                 flag: (country[index].flags!.png).toString(),
                                 countryName:

@@ -168,6 +168,8 @@ class CountryModel {
     json['postalCode'] = postalCode?.toJson();
     return json;
   }
+
+  where(bool Function(dynamic name) param0) {}
 }
 
 class Name {
